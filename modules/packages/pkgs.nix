@@ -99,5 +99,6 @@
     dotool
     gdown
     songrec
+    mpv
   ];
 }
