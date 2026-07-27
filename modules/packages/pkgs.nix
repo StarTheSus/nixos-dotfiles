@@ -98,5 +98,6 @@
     dust
     dotool
     gdown
+    songrec
   ];
 }
