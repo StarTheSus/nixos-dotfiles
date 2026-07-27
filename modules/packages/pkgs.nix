@@ -100,6 +100,8 @@
     gdown
     songrec
     ddcutil
+    smartmontools
+    libqalculate
 
     # Audio
     mpv
