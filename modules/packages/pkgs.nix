@@ -99,6 +99,11 @@
     dotool
     gdown
     songrec
+    ddcutil
+
+    # Audio
     mpv
+    (mpv.override { scripts = [ mpvScripts.mpris ]; })
+    playerctl
   ];
 }
