@@ -2,20 +2,25 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-		  ./hardware-configuration.nix
-		  ../../modules/audio
-		  ../../modules/desktop
-    	../../modules/dev
-    	../../modules/env
-    	../../modules/hardware
-    	../../modules/packages
-    	../../modules/system
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../modules/audio
+    ../../modules/desktop
+    ../../modules/dev
+    ../../modules/env
+    ../../modules/hardware
+    ../../modules/packages
+    ../../modules/system
+  ];
 
   # Packages (temporary till it's in imports)
   programs.zsh.enable = true;
@@ -38,6 +43,7 @@
   # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "LOQ";
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
@@ -82,14 +88,14 @@
   users.users.star = {
     isNormalUser = true;
     extraGroups = [
-      "wheel"           # Sudo access
-      "networkmanager"  # Manage Wi-Fi/networking
-      "audio"           # Direct audio hardware access
-      "video"           # Direct GPU/brightness access
-      "input"           # Direct access to mice/keyboards
-      "kvm"             # Virtual machine hardware acceleration
-      "podman"          # Rootless container management
-      "docker"          # Daemon access for Compose stacks
+      "wheel" # Sudo access
+      "networkmanager" # Manage Wi-Fi/networking
+      "audio" # Direct audio hardware access
+      "video" # Direct GPU/brightness access
+      "input" # Direct access to mice/keyboards
+      "kvm" # Virtual machine hardware acceleration
+      "podman" # Rootless container management
+      "docker" # Daemon access for Compose stacks
     ];
     shell = pkgs.zsh;
     home = "/home/star";
@@ -97,14 +103,20 @@
 
   nix.settings = {
     # Grant my user and members of the wheel group trust to add binary caches
-    trusted-users = [ "root" "@wheel" ];
-    experimental-features = [ "nix-command" "flakes" ];
+    trusted-users = [
+      "root"
+      "@wheel"
+    ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-	users.star = import ../../home/default.nix;
+    users.star = import ../../home/default.nix;
   };
 
   # environment.variables = {
@@ -159,7 +171,6 @@
   # tmpfs
   boot.tmp.useTmpfs = true;
 
-
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
@@ -185,4 +196,3 @@
   system.stateVersion = "26.05"; # Did you read the comment?
 
 }
-

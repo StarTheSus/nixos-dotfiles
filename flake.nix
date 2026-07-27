@@ -43,12 +43,12 @@
     }:
     {
       # NOTE: 'nixos' is the default hostname
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.LOQ = nixpkgs.lib.nixosSystem {
         modules = [
           home-manager.nixosModules.home-manager
           nix-flatpak.nixosModules.nix-flatpak
           qylock.nixosModules.default
-          ./hosts/star/configuration.nix
+          ./hosts/LOQ/configuration.nix
           ./modules/packages/flatpak.nix
           ./modules/packages/zen.nix
         ];
