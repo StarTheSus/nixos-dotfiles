@@ -1,8 +1,15 @@
-{ config, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
+  imports = [
+    inputs.noctalia.nixosModules.default
+  ];
+
   # WM
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    recommendedServices.enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     xwayland-satellite
@@ -14,7 +21,6 @@
   environment.sessionVariables = {
     XCURSOR_SIZE = "36";
   };
-
 
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.login.enableGnomeKeyring = true;
