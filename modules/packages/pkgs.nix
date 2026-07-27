@@ -15,6 +15,11 @@
     };
     git = {
       enable = true;
+      config = {
+        safe = {
+          directory = "/home/star/nixos";
+        };
+      };
     };
     lazygit = {
       enable = true;
