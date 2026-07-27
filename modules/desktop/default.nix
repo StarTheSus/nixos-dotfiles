@@ -1,0 +1,13 @@
+{ ... }:
+
+{
+  imports = [
+    ./sddm.nix
+    ./niri.nix
+    ./noctalia.nix
+    ./xdg.nix
+	./fonts.nix
+	./theming.nix
+	./utils.nix
+  ];
+}
