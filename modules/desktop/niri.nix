@@ -5,10 +5,16 @@
     inputs.noctalia.nixosModules.default
   ];
 
+  # Shell
+  programs.noctalia = {
+    enable = true;
+    # Enables NetworkManager, Bluetooth, UPower, and a power profile service.
+    recommendedServices.enable = true;
+  };
+
   # WM
   programs.niri = {
     enable = true;
-    recommendedServices.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
