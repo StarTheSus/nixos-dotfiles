@@ -23,6 +23,14 @@ pkgs.writeShellScriptBin "stargit" ''
     git -C "$target_dir" config --local user.signingkey "$SIGNING_KEY"
     git -C "$target_dir" config --local gpg.format ssh
     git -C "$target_dir" config --local commit.gpgsign true
+
+    # Auto-fix the remote URL to use the SSH alias if it exists
+    if git -C "$target_dir" remote get-url origin 2>/dev/null | grep -q "@github.com"; then
+      local old_url=$(git -C "$target_dir" remote get-url origin)
+      local new_url="''${old_url/github.com/github-star}"
+      git -C "$target_dir" remote set-url origin "$new_url"
+      echo "Swapped remote 'origin' to use github-star SSH alias."
+    fi
     
     echo "[ok]: Repo is now configured for Star."
   }
@@ -46,6 +54,15 @@ pkgs.writeShellScriptBin "stargit" ''
       ;;
       
     clone)
+      # Automatically swap github.com to github-star in the clone command itself
+      ARGS=()
+      for arg in "$@"; do
+        if [[ "$arg" == *"@github.com"* ]]; then
+          arg="''${arg/github.com/github-star}"
+        fi
+        ARGS+=("$arg")
+      done
+
       git clone "$@"
       
       # Try to guess the cloned directory name
