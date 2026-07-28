@@ -76,6 +76,20 @@
               };
             }
           ];
+          "node.rules" = [
+            {
+              matches = [
+                # { "node.name" = "~.*"; }
+                { "node.name" = "capture.rnnoise_source"; }
+                { "node.name" = "rnnoise_source"; }
+              ];
+              actions = {
+                update-props = {
+                  "session.suspend-timeout-seconds" = 0;
+                };
+              };
+            }
+          ];
         };
       };
     };

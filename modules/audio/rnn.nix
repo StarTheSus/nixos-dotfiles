@@ -31,6 +31,10 @@
           "playback.props" = {
             "node.name" = "rnnoise_source";
             "media.class" = "Audio/Source";
+            "priority.driver" = 2000;
+            "priority.session" = 2000;
+            "node.pause-on-idle" = false;
+            "session.suspend-timeout-seconds" = 0;
           };
         };
       }
