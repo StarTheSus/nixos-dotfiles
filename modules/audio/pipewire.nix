@@ -24,29 +24,6 @@
           "default.clock.max-quantum" = 8192;
         };
       };
-
-      # "60-echo-cancel" = {
-      #   "context.modules" = [
-      #     {
-      #       name = "libpipewire-module-echo-cancel";
-      #       args = {
-      #         "monitor.mode" = true;
-      #         "capture.props" = {
-      #           "node.name" = "echo-cancel-capture";
-      #           "node.passive" = false; # Keeps Equibop happy
-      #           "node.force-quantum" = 1024;
-      #         };
-      #         "source.props" = {
-      #           "node.name" = "echo-cancel-source";
-      #         };
-      #         "aec.args" = {
-      #           "webrtc.gain_control" = false;
-      #           "webrtc.extended_filter" = false;
-      #         };
-      #       };
-      #     }
-      #   ];
-      # };
     };
 
     # 2. WirePlumber configuration
