@@ -28,6 +28,10 @@
       url = "github:Darkkal44/qylock";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    future-cursors = {
+      url = "github:StarTheSus/Nix-Future-cursors";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs@{
@@ -38,6 +42,7 @@
       nix-flatpak,
       zen-browser,
       qylock,
+      future-cursors,
       ...
     }:
     {

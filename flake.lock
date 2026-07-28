@@ -18,6 +18,26 @@
         "type": "github"
       }
     },
+    "future-cursors": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785261718,
+        "narHash": "sha256-F77y7HQj36o5OgJg6wWgDV9Si1RWwxdxK9KDHJyjafw=",
+        "owner": "StarTheSus",
+        "repo": "Nix-Future-cursors",
+        "rev": "695a15417f7bceaade923094c8afec9266716f24",
+        "type": "github"
+      },
+      "original": {
+        "owner": "StarTheSus",
+        "repo": "Nix-Future-cursors",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -124,6 +144,7 @@
     },
     "root": {
       "inputs": {
+        "future-cursors": "future-cursors",
         "home-manager": "home-manager",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",

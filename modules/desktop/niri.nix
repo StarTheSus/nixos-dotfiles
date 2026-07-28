@@ -20,11 +20,9 @@
     kitty
     polkit_gnome
     wl-clipboard
+    # Flakes
+    inputs.future-cursors.packages.${pkgs.system}.default
   ];
-
-  environment.sessionVariables = {
-    XCURSOR_SIZE = "36";
-  };
 
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.login.enableGnomeKeyring = true;
