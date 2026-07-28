@@ -41,7 +41,6 @@
       ...
     }:
     {
-      # NOTE: 'nixos' is the default hostname
       nixosConfigurations.LOQ = nixpkgs.lib.nixosSystem {
         modules = [
           home-manager.nixosModules.home-manager
