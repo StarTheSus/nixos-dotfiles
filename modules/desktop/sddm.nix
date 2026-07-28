@@ -1,10 +1,12 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # SDDM Wayland
   services.displayManager.sddm = {
     enable = true;
-    wayland.enable = true;
+    wayland = {
+      enable = true;
+    };
   };
 
   programs.qylock = {
@@ -22,7 +24,7 @@
       ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
       Restart = "on-failure";
       RestartSec = 1;
-      TimeoutStopSec = 10; 
+      TimeoutStopSec = 10;
     };
   };
 }
