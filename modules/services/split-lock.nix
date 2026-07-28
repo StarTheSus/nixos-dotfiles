@@ -1,15 +1,25 @@
 { pkgs, ... }:
 
 {
-  systemd.tmpfiles.rules = [
-    "d /tmp/gaming-triggers 0700 star users -"
-  ];
+  # Intercept the directory with a 1MB RAM disk
+  # This spares my SSD while keeping the path visible to Steam's sandbox
+  fileSystems."/home/star/scripts/system/gaming/triggers" = {
+    device = "tmpfs";
+    fsType = "tmpfs";
+    # Resolves ownership to my user and locks out other users
+    options = [
+      "size=1M"
+      "mode=0700"
+      "uid=star"
+      "gid=users"
+    ];
+  };
 
   systemd.paths.split-lock-off = {
     description = "Inotify watch to disable split lock mitigation";
     wantedBy = [ "multi-user.target" ];
     pathConfig = {
-      PathExists = "/tmp/gaming-triggers/split_lock_off";
+      PathExists = "/home/star/scripts/system/gaming/triggers/split_lock_off";
     };
   };
 
@@ -18,7 +28,7 @@
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.procps}/bin/sysctl -w kernel.split_lock_mitigate=0";
-      ExecStartPost = "${pkgs.coreutils}/bin/rm -f /tmp/gaming-triggers/split_lock_off";
+      ExecStartPost = "${pkgs.coreutils}/bin/rm -f /home/star/scripts/system/gaming/triggers/split_lock_off";
     };
   };
 
@@ -26,7 +36,7 @@
     description = "Inotify watch to enable split lock mitigation";
     wantedBy = [ "multi-user.target" ];
     pathConfig = {
-      PathExists = "/tmp/gaming-triggers/split_lock_on";
+      PathExists = "/home/star/scripts/system/gaming/triggers/split_lock_on";
     };
   };
 
@@ -35,7 +45,7 @@
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.procps}/bin/sysctl -w kernel.split_lock_mitigate=1";
-      ExecStartPost = "${pkgs.coreutils}/bin/rm -f /tmp/gaming-triggers/split_lock_on";
+      ExecStartPost = "${pkgs.coreutils}/bin/rm -f /home/star/scripts/system/gaming/triggers/split_lock_on";
     };
   };
 }
