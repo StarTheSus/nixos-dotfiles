@@ -6,7 +6,7 @@ USER_EMAIL="252556693+StarTheSus@users.noreply.github.com"
 SIGNING_KEY="/home/star/.ssh/id_ed25519_star_signing"
 
 apply_configs() {
-  local target_dir="''${1:-.}"
+  local target_dir="${1:-.}"
   echo "[i]: Applying stargit configs to '$target_dir'..."
 
   # Ensure it's a git repository before applying
@@ -24,7 +24,7 @@ apply_configs() {
   # Auto-fix the remote URL to use the SSH alias if it exists
   if git -C "$target_dir" remote get-url origin 2>/dev/null | grep -q "@github.com"; then
     local old_url=$(git -C "$target_dir" remote get-url origin)
-    local new_url="''${old_url/github.com/github-star}"
+    local new_url="${old_url/github.com/github-star}"
     git -C "$target_dir" remote set-url origin "$new_url"
     echo "[i]: Swapped remote 'origin' to use github-star SSH alias."
   fi
@@ -55,7 +55,7 @@ clone)
   ARGS=()
   for arg in "$@"; do
     if [[ "$arg" == *"@github.com"* ]]; then
-      arg="''${arg/github.com/github-star}"
+      arg="${arg/github.com/github-star}"
     fi
     ARGS+=("$arg")
   done
