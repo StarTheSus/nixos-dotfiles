@@ -20,6 +20,7 @@
     ../../modules/hardware
     ../../modules/packages
     ../../modules/system
+    ../../modules/services
   ];
 
   # Packages (temporary till it's in imports)
