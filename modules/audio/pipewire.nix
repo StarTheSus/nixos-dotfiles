@@ -80,8 +80,9 @@
             {
               matches = [
                 # { "node.name" = "~.*"; }
-                { "node.name" = "capture.rnnoise_source"; }
-                { "node.name" = "rnnoise_source"; }
+                { "node.name" = "~alsa_input.*"; }
+                { "node.name" = "~.*rnnoise.*"; }
+                { "media.class" = "~Stream/Input/.*"; }
               ];
               actions = {
                 update-props = {
