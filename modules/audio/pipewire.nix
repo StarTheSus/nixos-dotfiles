@@ -80,7 +80,6 @@
             {
               matches = [
                 # { "node.name" = "~.*"; }
-                { "node.name" = "~alsa_input.*"; }
                 { "node.name" = "~.*rnnoise.*"; }
                 { "media.class" = "~Stream/Input/.*"; }
               ];
