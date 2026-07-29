@@ -28,8 +28,14 @@
       url = "github:Darkkal44/qylock";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # My flakes
     future-cursors = {
       url = "github:StarTheSus/Nix-Future-cursors";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    anurati-font = {
+      # priv flake for now
+      url = "git+ssh://git@github-star/StarTheSus/Nix-ANURATI-free-font.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -43,6 +49,7 @@
       zen-browser,
       qylock,
       future-cursors,
+      anurati-font,
       ...
     }:
     {
