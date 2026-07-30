@@ -7,7 +7,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
 
-    # 1. Main PipeWire configuration
+    # Main PipeWire configuration
     extraConfig.pipewire = {
       "10-rates" = {
         "context.properties" = {
@@ -26,7 +26,7 @@
       };
     };
 
-    # 2. WirePlumber configuration
+    # WirePlumber configuration
     wireplumber = {
       enable = true;
       extraConfig = {
@@ -94,7 +94,7 @@
       };
     };
 
-    # 3. PulseAudio Quirks
+    # PulseAudio Quirks
     extraConfig.pipewire-pulse = {
       "10-source-volumes" = {
         "pulse.rules" = [
