@@ -9,6 +9,6 @@
 
   # General modprobe options
   boot.extraModprobeConfig = ''
-    # Add future non-GPU specific modprobe options here
+    options snd_hda_intel power_save=0
   '';
 }
