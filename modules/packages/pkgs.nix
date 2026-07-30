@@ -103,6 +103,9 @@
     smartmontools
     libqalculate
 
+    # Debug
+    bpftrace
+
     # Audio
     mpv
     (mpv.override { scripts = [ mpvScripts.mpris ]; })
