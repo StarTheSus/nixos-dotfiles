@@ -11,9 +11,10 @@
     sound-theme-freedesktop
     pulseaudio # Cli only
     wiremix
+    alsa-utils # For amixer
     helvum
     pavucontrol
-	jamesdsp
-	easyeffects
+    jamesdsp
+    easyeffects
   ];
 }
