@@ -97,6 +97,7 @@
       "kvm" # Virtual machine hardware acceleration
       "podman" # Rootless container management
       "docker" # Daemon access for Compose stacks
+      "gamemode" # Polkit rules for gamemode cpu governor optimization
     ];
     shell = pkgs.zsh;
     home = "/home/star";
