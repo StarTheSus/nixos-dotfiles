@@ -17,6 +17,7 @@
     ../../modules/desktop
     ../../modules/dev
     ../../modules/env
+    ../../modules/gaming
     ../../modules/hardware
     ../../modules/packages
     ../../modules/system
