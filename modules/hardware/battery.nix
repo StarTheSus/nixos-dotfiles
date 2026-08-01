@@ -23,6 +23,10 @@
       # Don't kill sound, please
       SOUND_POWER_SAVE_ON_AC = 0;
       SOUND_POWER_SAVE_ON_BAT = 0;
+
+      # Disable power-efficient workqueues on AC (N), enable on Battery (Y)
+      SCHED_POWERSAVE_ON_AC = 0;
+      SCHED_POWERSAVE_ON_BAT = 1;
     };
   };
   services.upower.enable = true;
