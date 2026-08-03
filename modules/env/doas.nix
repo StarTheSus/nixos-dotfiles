@@ -53,5 +53,10 @@
         "waydroid-container"
       ];
     }
+    {
+      users = [ "star" ];
+      noPass = true;
+      cmd = "/etc/profiles/per-user/star/bin/splitlock-toggle";
+    }
   ];
 }
