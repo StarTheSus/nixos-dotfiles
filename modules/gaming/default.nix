@@ -2,6 +2,5 @@
 
 {
   imports = [
-    ./gamemode-polkit.nix
   ];
 }

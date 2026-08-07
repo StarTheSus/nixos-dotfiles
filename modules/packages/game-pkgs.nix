@@ -32,11 +32,7 @@
         gst_all_1.gst-plugins-bad
         gst_all_1.gst-plugins-good
         gst_all_1.gst-libav
-        gamemode # It ignores gamemode for some reason?
       ];
-    };
-    gamemode = {
-      enable = true;
     };
     gamescope = {
       enable = true;
@@ -64,7 +60,6 @@
         pkgs.vulkan-validation-layers
         pkgs.vkd3d
         pkgs.vkd3d-proton
-        pkgs.gamemode # This one too ignores it?
       ];
     })
   ];
