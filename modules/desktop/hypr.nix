@@ -1,12 +1,6 @@
 { pkgs, ... }:
 
 {
-  # SDDM Wayland
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
-
   # WM
   programs.hyprland = {
     enable = true;
