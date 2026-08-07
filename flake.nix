@@ -16,6 +16,11 @@
       url = "github:noctalia-dev/noctalia/cachix";
     };
 
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak";
     };
@@ -24,15 +29,13 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    qylock = {
-      url = "github:Darkkal44/qylock";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+
     # My flakes
     future-cursors = {
       url = "github:StarTheSus/Nix-Future-cursors";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     anurati-font = {
       # priv flake for now
       url = "git+ssh://git@github-star/StarTheSus/Nix-ANURATI-free-font.git";
@@ -44,10 +47,10 @@
       self,
       nixpkgs,
       noctalia,
+      noctalia-greeter,
       home-manager,
       nix-flatpak,
       zen-browser,
-      qylock,
       future-cursors,
       anurati-font,
       ...
@@ -57,7 +60,6 @@
         modules = [
           home-manager.nixosModules.home-manager
           nix-flatpak.nixosModules.nix-flatpak
-          qylock.nixosModules.default
           ./hosts/LOQ/configuration.nix
           ./modules/packages/flatpak.nix
           ./modules/packages/zen.nix

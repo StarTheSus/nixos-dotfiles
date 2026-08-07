@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./sddm.nix
     ./niri.nix
     ./noctalia.nix
     ./xdg.nix
@@ -11,5 +10,6 @@
     ./utils.nix
     ./wayland.nix
     ./polkit.nix
+    ./greeter.nix
   ];
 }
