@@ -16,8 +16,18 @@
       efiSupport = true;
       device = "nodev";
       theme = pkgs.sleek-grub-theme; # TODO: change this shi
+      memtest86.enable = true;
 
       # gfxmodeEfi = "1920x1080"; # May or may not need it, Idk
+      extraEntries = ''
+        menuentry "Poweroff" --class shutdown {
+          halt
+        }
+
+        menuentry "UEFI Firmware Settings" --class uefi {
+          fwsetup
+        }
+      '';
     };
   };
 }
