@@ -1,18 +1,23 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-	# Systemd-boot
-	boot.loader.systemd-boot.enable = true;
-	boot.loader.efi.canTouchEfiVariables = true;
-  	boot.loader.systemd-boot.configurationLimit = 20;
+  boot.loader = {
+    # Shared
+    efi.canTouchEfiVariables = true;
 
-	# Grub
-	# boot.loader.systemd-boot.enable = false;
-	# boot.loader.efi.canTouchEfiVariables = true;
-	# boot.loader.grub = {
-	# 	enable = true;
-	#  		efiSupport = true;
-	#  		device = "nodev"; # Required for UEFI
-	#  		theme = /path/to/custom/grub/theme;
-	# };
+    # Systemd-boot
+    # systemd-boot.configurationLimit = 20;
+    # systemd-boot.enable = true;
+
+    # Grub
+    systemd-boot.enable = false;
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      theme = pkgs.sleek-grub-theme; # TODO: change this shi
+
+      # gfxmodeEfi = "1920x1080"; # May or may not need it, Idk
+    };
+  };
 }
