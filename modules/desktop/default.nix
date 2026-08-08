@@ -9,7 +9,6 @@
     ./theming.nix
     ./utils.nix
     ./wayland.nix
-    ./polkit.nix
     ./greeter.nix
   ];
 }
