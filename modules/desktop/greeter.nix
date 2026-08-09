@@ -13,7 +13,7 @@
     settings = {
       cursor = {
         theme = "Future-cyan-cursors";
-        size = 26;
+        size = 24;
         path = "${inputs.future-cursors.packages.${pkgs.system}.cyan}/share/icons";
       };
       keyboard = {
