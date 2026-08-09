@@ -37,7 +37,7 @@
     };
 
     anurati-font = {
-      # priv flake for now
+      # priv flake forever
       url = "git+ssh://git@github-star/StarTheSus/Nix-ANURATI-free-font.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
