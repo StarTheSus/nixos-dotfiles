@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   boot.loader = {
@@ -15,10 +15,13 @@
       enable = true;
       efiSupport = true;
       device = "nodev";
-      theme = pkgs.sleek-grub-theme; # TODO: change this shi
-      memtest86.enable = true;
-
-      # gfxmodeEfi = "1920x1080"; # May or may not need it, Idk
+      theme = inputs.cybergrub-2077.packages.${pkgs.system}.mkTheme { logo = "nixos"; };
+      gfxmodeEfi = "auto";
+      gfxpayloadEfi = "keep";
+      # memtest86.enable = true;
+      extraFiles = {
+        "memtest.efi" = pkgs.memtest86plus.efi;
+      };
       extraEntries = ''
         menuentry "Poweroff" --class shutdown {
           halt
@@ -26,6 +29,10 @@
 
         menuentry "UEFI Firmware Settings" --class uefi {
           fwsetup
+        }
+
+        menuentry "Memory Tester (memtest86+)" --class memtest {
+        chainloader /memtest.efi
         }
       '';
     };

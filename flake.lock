@@ -20,6 +20,26 @@
         "url": "ssh://git@github-star/StarTheSus/Nix-ANURATI-free-font.git"
       }
     },
+    "cybergrub-2077": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786300333,
+        "narHash": "sha256-r2UDHk4j03+8dTXj7MCJhe9TsyYQ+RZZFwIOVfkTfLk=",
+        "owner": "StarTheSus",
+        "repo": "CyberGRUB-2077-Nix",
+        "rev": "b40b234f3189deba02f2d56d80c341820d05d76e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "StarTheSus",
+        "repo": "CyberGRUB-2077-Nix",
+        "type": "github"
+      }
+    },
     "future-cursors": {
       "inputs": {
         "nixpkgs": [
@@ -146,6 +166,7 @@
     "root": {
       "inputs": {
         "anurati-font": "anurati-font",
+        "cybergrub-2077": "cybergrub-2077",
         "future-cursors": "future-cursors",
         "home-manager": "home-manager",
         "nix-flatpak": "nix-flatpak",

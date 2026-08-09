@@ -41,6 +41,11 @@
       url = "git+ssh://git@github-star/StarTheSus/Nix-ANURATI-free-font.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    cybergrub-2077 = {
+      url = "github:StarTheSus/CyberGRUB-2077-Nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs@{
@@ -53,6 +58,7 @@
       zen-browser,
       future-cursors,
       anurati-font,
+      cybergrub-2077,
       ...
     }:
     {
