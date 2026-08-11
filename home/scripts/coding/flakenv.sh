@@ -7,6 +7,7 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
+MASTER_DIR="/home/star/projects/nix-templates"
 TEMPLATE_PATH="/home/star/projects/nix-templates/$1"
 
 if [ ! -d "$TEMPLATE_PATH" ]; then
@@ -14,5 +15,9 @@ if [ ! -d "$TEMPLATE_PATH" ]; then
   exit 1
 fi
 
-nix flake init -t "$TEMPLATE_PATH"
-echo "[ok]: Flake '$1' initialized."
+if nix flake init -t "$MASTER_DIR#$1"; then
+  echo "[ok]: Flake '$1' initialized. You can now run 'nix develop'."
+else
+  echo "[E]: Failed to initialize template '$1'."
+  exit 1
+fi
