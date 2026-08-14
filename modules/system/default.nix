@@ -6,5 +6,6 @@
     ./bootloader.nix
     ./services.nix
     ./network.nix
+    ./systemd.nix
   ];
 }
