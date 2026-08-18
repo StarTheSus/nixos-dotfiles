@@ -41,6 +41,7 @@
   # Core   # TODO: cleanup
   environment.systemPackages = with pkgs; [
     equibop
+    telegram-desktop
     vivaldi
     heroic
     kitty
