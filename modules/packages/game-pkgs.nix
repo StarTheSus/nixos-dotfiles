@@ -42,6 +42,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    prismlauncher
     wineWow64Packages.stagingFull
     winetricks
     protonplus
