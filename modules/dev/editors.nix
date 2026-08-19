@@ -10,12 +10,12 @@
   };
 
   services = {
-    emacs ={
+    emacs = {
       enable = true;
     };
   };
-  
+
   environment.systemPackages = with pkgs; [
-    antigravity
+    antigravity-ide
   ];
 }
