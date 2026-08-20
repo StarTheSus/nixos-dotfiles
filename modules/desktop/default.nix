@@ -10,5 +10,6 @@
     ./utils.nix
     ./wayland.nix
     ./greeter.nix
+    ./polkit.nix
   ];
 }
