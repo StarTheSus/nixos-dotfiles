@@ -1,9 +1,22 @@
 { ... }:
 
 {
-  networking.networkmanager = {
+  networking = {
+    networkmanager = {
+      enable = true;
+      wifi.backend = "iwd";
+      wifi.powersave = false;
+    };
+    firewall = {
+      enable = true;
+      # Minecraft moment
+      allowedTCPPorts = [ 6969 ];
+    };
+  };
+
+  services.openssh = {
     enable = true;
-    wifi.backend = "iwd";
-    wifi.powersave = false;
+    ports = [ 2222 ];
+    openFirewall = true;
   };
 }
