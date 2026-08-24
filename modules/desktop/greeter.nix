@@ -14,7 +14,7 @@
       cursor = {
         theme = "Future-cyan-cursors";
         size = 24;
-        path = "${inputs.future-cursors.packages.${pkgs.system}.cyan}/share/icons";
+        path = "${inputs.future-cursors.packages.${pkgs.stdenv.hostPlatform.system}.cyan}/share/icons";
       };
       keyboard = {
         layout = "us,ar";

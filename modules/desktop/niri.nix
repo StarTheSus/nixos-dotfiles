@@ -21,7 +21,7 @@
     polkit_gnome
     wl-clipboard
     # Flakes
-    inputs.future-cursors.packages.${pkgs.system}.default
+    inputs.future-cursors.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   services.gnome.gnome-keyring.enable = true;

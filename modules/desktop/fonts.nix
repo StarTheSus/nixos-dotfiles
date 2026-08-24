@@ -12,6 +12,6 @@
     amiri
     font-awesome
     # Flakes
-    inputs.anurati-font.packages.${pkgs.system}.default
+    inputs.anurati-font.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }
