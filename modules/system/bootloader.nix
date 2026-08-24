@@ -1,13 +1,14 @@
 { pkgs, inputs, ... }:
 
 {
-  boot.loader = {
-    # Shared
-    efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      # Shared
+      efi.canTouchEfiVariables = true;
 
-    # Systemd-boot
-    # systemd-boot.configurationLimit = 20;
-    # systemd-boot.enable = true;
+      # Systemd-boot
+      # systemd-boot.configurationLimit = 20;
+      # systemd-boot.enable = true;
 
       # Grub
       systemd-boot.enable = false;
@@ -27,14 +28,18 @@
             halt
           }
 
-        menuentry "UEFI Firmware Settings" --class uefi {
-          fwsetup
-        }
+          menuentry "UEFI Firmware Settings" --class uefi {
+            fwsetup
+          }
 
-        menuentry "Memory Tester (memtest86+)" --class memtest {
-        chainloader /memtest.efi
-        }
-      '';
+          menuentry "Memory Tester (memtest86+)" --class memtest {
+          chainloader /memtest.efi
+          }
+        '';
+      };
+    };
+    plymouth = {
+      enable = true;
     };
   };
 }
