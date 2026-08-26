@@ -123,6 +123,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.star = import ../../home/default.nix;
+    backupFileExtension = "backup";
   };
 
   # environment.variables = {
