@@ -125,12 +125,6 @@
     users.star = import ../../home/default.nix;
   };
 
-  environment.variables = {
-    XCURSOR_THEME = "Future-cyan-cursors";
-    XCURSOR_SIZE = "26";
-    XCURSOR_PATH = lib.mkForce "/run/current-system/sw/share/icons";
-  };
-
   # environment.variables = {
   #   NIXOS_OZONE_WL = "1";
   #   GDK_BACKEND = "wayland,x11";

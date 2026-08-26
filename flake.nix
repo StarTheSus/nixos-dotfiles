@@ -30,6 +30,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # My flakes
     future-cursors = {
       url = "github:StarTheSus/Nix-Future-cursors";
@@ -56,6 +61,7 @@
       home-manager,
       nix-flatpak,
       zen-browser,
+      stylix,
       future-cursors,
       anurati-font,
       cybergrub-2077,
@@ -66,6 +72,7 @@
         modules = [
           home-manager.nixosModules.home-manager
           nix-flatpak.nixosModules.nix-flatpak
+          stylix.nixosModules.stylix
           ./hosts/LOQ/configuration.nix
           ./modules/packages/flatpak.nix
           ./modules/packages/zen.nix
