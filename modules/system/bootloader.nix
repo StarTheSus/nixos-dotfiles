@@ -16,7 +16,9 @@
         enable = true;
         efiSupport = true;
         device = "nodev";
-        theme = inputs.cybergrub-2077.packages.${pkgs.stdenv.hostPlatform.system}.mkTheme { logo = "nixos"; };
+        theme = inputs.cybergrub-2077.packages.${pkgs.stdenv.hostPlatform.system}.mkTheme {
+          logo = "nixos";
+        };
         gfxmodeEfi = "auto";
         gfxpayloadEfi = "keep";
         # memtest86.enable = true;
@@ -40,6 +42,15 @@
     };
     plymouth = {
       enable = true;
+      theme = "hexagon_dots_alt";
+
+      # Override the package to only install my selected theme
+      # cuz this package is HUGE
+      themePackages = [
+        (pkgs.adi1090x-plymouth-themes.override {
+          selected_themes = [ "hexagon_dots_alt" ];
+        })
+      ];
     };
   };
 }
