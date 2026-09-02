@@ -68,7 +68,7 @@
     tree
     gnused
     gawk
-    killall
+    psmisc
     keychain
 
     # Productivity
