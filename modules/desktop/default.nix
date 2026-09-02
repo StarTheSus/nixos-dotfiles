@@ -3,7 +3,6 @@
 {
   imports = [
     ./niri.nix
-    ./noctalia.nix
     ./xdg.nix
     ./fonts.nix
     ./utils.nix
