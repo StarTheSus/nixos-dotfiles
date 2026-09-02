@@ -47,7 +47,6 @@
     kitty
     gcc
     gnumake
-    noctalia-shell
     obsidian
     libnotify
     fastfetch
