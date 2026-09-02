@@ -21,9 +21,7 @@
       };
       appearance = {
         hide_logo = true;
-        # font_family = "Inter"; # TODO
-        # This might sync and get removed, or need to be defined
-        # If it does need to be define for certain widgets or smth, I'll do it
+        password_style = "random";
       };
       user = {
         default = "star";
