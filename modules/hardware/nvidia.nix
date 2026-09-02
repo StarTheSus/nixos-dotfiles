@@ -1,18 +1,12 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
   # GET OUUUUUUUT
   boot.blacklistedKernelModules = [ "nouveau" ];
 
-  # Enable Graphics HW Acceleration
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
   # use novideo's driver
   services.xserver.videoDrivers = [
-    "modesetting" # For offloading, to allow nvidia to sleep
+    "modesetting" # allow nvidia to sleep by relying on intel iGPU
     "nvidia"
   ];
 
@@ -39,8 +33,8 @@
 
   # Nix doesn't wrap these... for some reason
   boot.extraModprobeConfig = ''
-        options nvidia NVreg_TemporaryFilePath=/var/tmp
-    	options nvidia NVreg_PreserveVideoMemoryAllocations=1
-        # options nvidia NVreg_DynamicPowerManagement=0x03
+    options nvidia NVreg_TemporaryFilePath=/var/tmp
+    options nvidia NVreg_PreserveVideoMemoryAllocations=1
+    # options nvidia NVreg_DynamicPowerManagement=0x03
   '';
 }
