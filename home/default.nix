@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   imports = [
     ./services
@@ -25,5 +23,9 @@
     #         recursive = true;
     #     };
     # };
+  };
+
+  home.sessionVariables = {
+    TERMINAL = "kitty";
   };
 }

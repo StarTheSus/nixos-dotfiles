@@ -5,6 +5,7 @@
 {
   config,
   lib,
+  inputs,
   pkgs,
   ...
 }:
@@ -124,6 +125,7 @@
     useUserPackages = true;
     users.star = import ../../home/default.nix;
     backupFileExtension = "backup";
+    extraSpecialArgs = { inherit inputs; };
   };
 
   # environment.variables = {
