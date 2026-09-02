@@ -6,6 +6,7 @@
     settings = {
       # Power management for PCIe
       RUNTIME_PM_ON_AC = "auto";
+      RUNTIME_PM_DENYLIST = "01:00.0"; # Let nvidia handle itself for d3cold
 
       # USB Denylist
       USB_DENYLIST = [
