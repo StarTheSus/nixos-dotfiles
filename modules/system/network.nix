@@ -11,12 +11,13 @@
       enable = true;
       # Minecraft moment
       allowedTCPPorts = [ 6969 ];
+      trustedInterfaces = [ "tailscale0" ];
     };
   };
 
-  services.openssh = {
-    enable = true;
-    ports = [ 2222 ];
-    openFirewall = true;
-  };
+  # services.openssh = {
+  #   enable = true;
+  #   ports = [ 2222 ];
+  #   openFirewall = true;
+  # };
 }
