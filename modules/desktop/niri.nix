@@ -1,5 +1,8 @@
 { inputs, pkgs, ... }:
 
+let
+  oldPkgs = (builtins.getFlake "github:nixos/nixpkgs/a5cbcfe954791221bfffe2307f7d1a1bf61a871e").legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in
 {
   imports = [
     inputs.noctalia.nixosModules.default
@@ -16,10 +19,9 @@
   };
 
   environment.systemPackages = with pkgs; [
-    xwayland-satellite
-    kitty
     polkit_gnome
     wl-clipboard
+    oldPkgs.xwayland-satellite
   ];
 
   services.gnome.gnome-keyring.enable = true;
