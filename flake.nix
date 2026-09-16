@@ -40,6 +40,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    doors = {
+      url = "git+https://dawn.wine/CreeperFace/doors";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # My flakes
     future-cursors = {
       url = "github:StarTheSus/Nix-Future-cursors";
@@ -67,6 +72,7 @@
       nix-flatpak,
       zen-browser,
       stylix,
+      doors,
       future-cursors,
       anurati-font,
       cybergrub-2077,

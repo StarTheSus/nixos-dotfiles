@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -112,5 +112,8 @@
     mpv
     (mpv.override { scripts = [ mpvScripts.mpris ]; })
     playerctl
+
+    # Inputs
+    inputs.doors.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }
