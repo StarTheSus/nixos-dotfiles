@@ -20,6 +20,7 @@ in
 
   environment.systemPackages = with pkgs; [
     polkit_gnome
+    nautilus
     wl-clipboard
     oldPkgs.xwayland-satellite
   ];

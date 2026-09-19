@@ -28,7 +28,7 @@
       };
     };
     mime.defaultApplications = {
-      "inode/directory" = [ "yazi.desktop" ];
+      "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
       "x-scheme-handler/terminal" = [ "kitty.desktop" ];
     };
   };
