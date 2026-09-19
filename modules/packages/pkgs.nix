@@ -42,6 +42,7 @@
   environment.systemPackages = with pkgs; [
     equibop
     telegram-desktop
+    qbittorrent
     vivaldi
     heroic
     kitty
