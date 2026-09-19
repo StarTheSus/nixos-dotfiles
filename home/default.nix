@@ -27,5 +27,7 @@
 
   home.sessionVariables = {
     TERMINAL = "kitty";
+    EDITOR = "env NVIM_APPNAME=lazyvim nvim";
+    VISUAL = "env NVIM_APPNAME=lazyvim nvim";
   };
 }

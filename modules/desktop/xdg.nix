@@ -30,6 +30,7 @@
     mime.defaultApplications = {
       "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
       "x-scheme-handler/terminal" = [ "kitty.desktop" ];
+      "text/plain" = [ "lazyvim.desktop" ];
     };
   };
 }
