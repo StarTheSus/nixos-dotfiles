@@ -36,6 +36,9 @@
     starship = {
       enable = true;
     };
+    bandwhich = {
+        enable = true;
+    };
   };
 
   # Core   # TODO: cleanup
