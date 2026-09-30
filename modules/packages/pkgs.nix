@@ -62,6 +62,7 @@
     # archives
     p7zip
     zip
+    unrar
     xz
     unzip
     gnutar
