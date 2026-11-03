@@ -2,5 +2,5 @@
 
 {
   # Don't kill my ssd, I'm not rich.
-  services.journald.storage = "volatile";
+  services.journald.settings.Journal.Storage = "volatile";
 }

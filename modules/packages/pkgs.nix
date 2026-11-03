@@ -87,7 +87,6 @@
     nvtopPackages.nvidia
     nvtopPackages.intel
     intel-gpu-tools
-    tmate
     delta
     bbe
 

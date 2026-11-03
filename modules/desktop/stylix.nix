@@ -47,4 +47,7 @@
       applications = 1.0;
     };
   };
+  home-manager.sharedModules = [
+  { stylix.targets.rofi.enable = false; }
+  ];
 }
