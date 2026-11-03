@@ -55,6 +55,7 @@
     libnotify
     fastfetch
     gparted
+    android-tools
 
     # git
     jujutsu
