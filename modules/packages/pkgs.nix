@@ -54,6 +54,7 @@
     obsidian
     libnotify
     fastfetch
+    gparted
 
     # git
     jujutsu
